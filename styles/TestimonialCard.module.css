@@ -1,0 +1,55 @@
+.card_outer {
+  height: 200px;
+  width: 300px;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: beige;
+}
+
+.card_text {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.card_profile {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.profile_pic {
+  background-size: cover;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.profile_title {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 70%;
+  margin-left: 5%;
+}
+
+.title_name {
+  font-weight: 500;
+  text-align: left;
+}
+
+.title_position {
+  font-weight: 100;
+  text-align: left;
+}
