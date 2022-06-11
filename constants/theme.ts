@@ -18,6 +18,14 @@ declare module "@mui/material/styles" {
   }
 }
 
+// Update the AppBar's color prop options
+declare module "@mui/material/AppBar" {
+  interface AppBarPropsColorOverrides {
+    tertiary: true;
+    quaternary: true;
+  }
+}
+
 export const COLORS = {
   PEACH: "#F4BA8D",
   YELLOW: "#F2DF74",

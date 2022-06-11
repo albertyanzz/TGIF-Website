@@ -1,0 +1,14 @@
+.wrapper {
+  flex: 1;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.pageContainer {
+  position: relative;
+  min-height: 100vh;
+}

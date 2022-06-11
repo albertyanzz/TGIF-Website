@@ -1,8 +1,15 @@
-.toolbar {
+.links {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
   color: white;
+  align-content: center;
+  font-size: small;
   font-weight: 600;
 }
+
+/* .toolbar {
+  min-height: 20px;
+  height: 20px;
+} */

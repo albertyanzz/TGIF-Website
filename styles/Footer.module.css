@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  color: white;
+}
+
+.button {
+  color: white;
+}
+
+.input {
+  color: white;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.newsletter {
+  display: flex;
+  width: 50vw;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}

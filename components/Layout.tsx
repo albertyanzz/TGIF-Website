@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import styles from "../styles/Layout.module.css";
 import Head from "next/head";
 import { theme } from "../constants/theme";
 import { ThemeProvider } from "@mui/material";
@@ -13,13 +14,17 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <ThemeProvider theme={theme}>
-      <Head>
-        <title>TGIF Toastmasters</title>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-      </Head>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <div className={styles.pageContainer}>
+        <Head>
+          <title>TGIF Toastmasters</title>
+          {/* <link rel="icon" href="/favicon.ico" /> */}
+        </Head>
+        <Header />
+        <main className={styles.wrapper}>{children}</main>
+        <footer className={styles.footer}>
+          <Footer />
+        </footer>
+      </div>
     </ThemeProvider>
   );
 }
