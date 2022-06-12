@@ -1,17 +1,26 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
-export const Button: React.FC = () => {
+interface IProps {
+  color: string;
+  width: string;
+  children: ReactNode;
+}
+
+export const Button: React.FC<IProps> = ({ color, width, children }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const color = "blue";
+  // const color = "#F4BA8D";
+  // const width = "200px"
 
   const style = {
     backgroundColor: isHovered ? "white" : color,
     borderRadius: "1000px",
-    width: "100px",
+    width: width,
     height: "50px",
-    border: `2px solid ${isHovered ? color : "white"}`,
+    border: `2px solid ${color}`,
     color: isHovered ? color : "white",
+    fontSize: "20px",
+    cursor: isHovered ? "pointer" : "auto",
   };
 
   return (
@@ -24,7 +33,7 @@ export const Button: React.FC = () => {
       }}
       style={style}
     >
-      Hello
+      {children}
     </button>
   );
 };

@@ -1,7 +1,5 @@
 .container {
   min-height: 100vh;
-  /* height: auto; */
-  background-color: beige;
   box-sizing: border-box;
   padding: 30px;
   display: flex;

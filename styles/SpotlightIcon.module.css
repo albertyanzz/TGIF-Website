@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.container:hover {
+  cursor: pointer;
+}
+
 .profile_pic {
   height: auto;
   width: 100%;

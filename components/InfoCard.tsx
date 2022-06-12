@@ -1,14 +1,26 @@
 import styles from "../styles/InfoCard.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
-export const InfoCard: React.FC = () => {
+interface IProps {
+  children: ReactNode;
+  color: string;
+  image: string;
+  label: string;
+}
+
+export const InfoCard: React.FC<IProps> = ({
+  color,
+  children,
+  image,
+  label,
+}) => {
   const pic = {
-    backgroundImage: "url(/images/info_why.jpg)",
+    backgroundImage: `url(/images/${image})`,
   };
 
   const cardColor = {
-    backgroundColor: "orange",
+    backgroundColor: color,
   };
 
   const learnMore = true;
@@ -26,15 +38,13 @@ export const InfoCard: React.FC = () => {
     >
       {isHovered ? (
         <div className={styles.description_container}>
-          <div className={styles.description}>
-            Hello this is random text blah blah blah blah blah blah blah blah
-          </div>
+          <div className={styles.description}>{children}</div>
         </div>
       ) : (
         <>
           <div className={styles.card_banner}>
             <div className={styles.card_sphere}>
-              <div className={styles.card_text}>Why Join?</div>
+              <div className={styles.card_text}>{label}</div>
             </div>
           </div>
           <div className={styles.card_pic} style={pic}>

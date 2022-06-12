@@ -1,25 +1,33 @@
 import styles from "../styles/TestimonialCard.module.css";
+import { ReactNode } from "react";
 
-export const TestimonialCard: React.FC = () => {
+interface IProps {
+  name: string;
+  title: string;
+  image: string;
+  children: ReactNode;
+}
+
+export const TestimonialCard: React.FC<IProps> = ({
+  name,
+  title,
+  image,
+  children,
+}) => {
   const pic = {
-    backgroundImage: "url(/images/testimonial_1.jpg)",
+    backgroundImage: `url(/images/${image})`,
   };
 
   return (
     <div className={styles.card_outer}>
       <div className={styles.card_text}>
-        <div>
-          This is a testimonial text blah blah This is a testimonial text blah
-          blah This is a testimonial text blah blah
-        </div>
+        <div>{children}</div>
       </div>
       <div className={styles.card_profile}>
         <div className={styles.profile_pic} style={pic} />
         <div className={styles.profile_title}>
-          <div className={styles.title_name}>Jenny Chang</div>
-          <div className={styles.title_position}>
-            Previous TGIF President and member since 2013
-          </div>
+          <div className={styles.title_name}>{name}</div>
+          <div className={styles.title_position}>{title}</div>
         </div>
       </div>
     </div>
