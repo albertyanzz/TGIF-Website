@@ -1,0 +1,93 @@
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding-inline: 30px;
+}
+
+.youtube_container {
+  height: 400px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  border: 5px solid black;
+  padding: 10px;
+  background-color: beige;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.main_video {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.right_menu {
+  width: auto;
+  height: 100%;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.video_bar {
+  width: auto;
+  height: 315px;
+  display: block;
+  overflow: scroll;
+  background-color: rgb(213, 213, 213);
+}
+
+.side_video {
+  cursor: pointer;
+  width: 180px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10px;
+}
+
+.channel_button {
+  width: 180px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.photos {
+  padding-bottom: 30px;
+}
+
+.photo_button {
+  width: 180px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px;
+  cursor: pointer;
+}

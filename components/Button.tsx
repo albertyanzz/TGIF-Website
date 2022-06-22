@@ -3,10 +3,20 @@ import { ReactNode, useState } from "react";
 interface IProps {
   color: string;
   width: string;
+  height?: string;
+  type?: string;
+  onClick?: React.MouseEventHandler;
   children: ReactNode;
 }
 
-export const Button: React.FC<IProps> = ({ color, width, children }) => {
+export const Button: React.FC<IProps> = ({
+  color,
+  width,
+  children,
+  height,
+  type,
+  onClick,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   // const color = "#F4BA8D";
@@ -16,10 +26,10 @@ export const Button: React.FC<IProps> = ({ color, width, children }) => {
     backgroundColor: isHovered ? "white" : color,
     borderRadius: "1000px",
     width: width,
-    height: "50px",
+    height: height ? height : "50px",
     border: `2px solid ${color}`,
     color: isHovered ? color : "white",
-    fontSize: "20px",
+    fontSize: height ? "80%" : "20px",
     cursor: isHovered ? "pointer" : "auto",
   };
 
@@ -32,6 +42,10 @@ export const Button: React.FC<IProps> = ({ color, width, children }) => {
         setIsHovered(false);
       }}
       style={style}
+      type={
+        type === "submit" ? "submit" : type === "reset" ? "reset" : "button"
+      }
+      onClick={onClick}
     >
       {children}
     </button>

@@ -5,6 +5,7 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts");
+const imageDirectory = path.join(process.cwd(), "public/images/featured");
 
 export async function getPostsDataByFolder(folderPath: string) {
   // Get file names under /posts
@@ -48,6 +49,18 @@ export function getAllPostIds() {
         params: {
           id: fileName.replace(/\.md$/, ""),
         },
+      };
+    });
+}
+
+export function getAllPhotoFiles() {
+  const fileNames = fs.readdirSync(imageDirectory);
+
+  return fileNames
+    .filter((file) => path.extname(file) == ".jpg")
+    .map((fileName) => {
+      return {
+        id: fileName,
       };
     });
 }

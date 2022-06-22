@@ -1,5 +1,6 @@
-import type { NextPage } from "next";
-import { GetStaticProps } from "next";
+import type { NextPage, GetStaticProps } from "next";
+import Link from "next/link";
+import { useState } from "react";
 import { Params } from "next/dist/server/router";
 import { getPostsDataByFolder } from "../lib/posts";
 import { ITestimonial } from "../lib/types";
@@ -20,6 +21,15 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage<Params> = ({ testimonialData }) => {
+  const textArray = [
+    "have fun",
+    "learn",
+    "are family",
+    "grow with our stories",
+  ];
+
+  const [changingText, setChangingText] = useState("have fun");
+
   const buttonStyle = {
     color: "#F4BA8D",
     width: "200px",
@@ -35,7 +45,13 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
         </div>
         <div className={styles.sub_text}>
           <div>Here we...</div>
-          <div className={styles.changing_text}>have fun</div>
+          <div className={styles.changing_text_wrapper}>
+            <span className={styles.changing_text}>have fun</span>
+            <span className={styles.changing_text}>learn</span>
+            <span className={styles.changing_text}>are family</span>
+            <span className={styles.changing_text}>grow with our stories</span>
+            <span className={styles.changing_text}>have fun</span>
+          </div>
         </div>
       </div>
       <div className={styles.info_boxes}>
@@ -43,20 +59,34 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
           label="What is Toastmasters?"
           image="info_tm.jpg"
           color="#F2DF74"
+          learnMore={true}
+          link="/about#toastmasters"
         >
           Toastmasters International is a nonprofit educational organization
           that teaches public speaking and leadership skills through a worldwide
           network of clubs in 145 countries. In Taiwan, there are nearly 180
           clubs in Chinese, English, Japanese and Taiwanese.
         </InfoCard>
-        <InfoCard label="Who is TGIF?" image="info_tgif.jpg" color="#F4BA8D">
+        <InfoCard
+          label="Who is TGIF?"
+          image="info_tgif.jpg"
+          color="#F4BA8D"
+          learnMore={true}
+          link="/about#tgif"
+        >
           Established in 2013, TGIF started off as a Christian Toastmasters club
           and is now open to all while maintaining longtime traditions such as a
           welcome song and closing prayers. TGIF is a bilingual club
           (English/Mandarin) built on love, fun, and excellence, inspiring
           members to grow with their stories
         </InfoCard>
-        <InfoCard label="Why join?" image="info_why.jpg" color="#F77E21">
+        <InfoCard
+          label="Why join?"
+          image="info_why.jpg"
+          color="#F77E21"
+          learnMore={true}
+          link="/about#join"
+        >
           TGIF is a championship caliber club, holding the record of an 8 year
           streak of top 3 national finalists in the annual speech contest. With
           a diverse group of members and a mentorship program, there is an
@@ -103,9 +133,15 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
           Zoom link: https://us02web.zoom.us/j/8675406
         </div>
         <div className={styles.info_links}>
-          <Button {...buttonStyle}>RSVP</Button>
-          <Button {...buttonStyle}>Membership</Button>
-          <Button {...buttonStyle}>Sign up for role</Button>
+          <Link href="/events">
+            <Button {...buttonStyle}>RSVP</Button>
+          </Link>
+          <Link href="/membership">
+            <Button {...buttonStyle}>Membership</Button>
+          </Link>
+          <Link href="/role">
+            <Button {...buttonStyle}>Sign up for role</Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,0 +1,22 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("../public/images/role.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  color: black;
+  padding: 30px;
+}

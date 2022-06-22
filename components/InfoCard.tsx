@@ -1,12 +1,15 @@
 import styles from "../styles/InfoCard.module.css";
 import Link from "next/link";
 import { ReactNode, useState } from "react";
+import { Url } from "url";
 
 interface IProps {
   children: ReactNode;
   color: string;
   image: string;
   label: string;
+  link?: string;
+  learnMore?: boolean;
 }
 
 export const InfoCard: React.FC<IProps> = ({
@@ -14,6 +17,8 @@ export const InfoCard: React.FC<IProps> = ({
   children,
   image,
   label,
+  link,
+  learnMore,
 }) => {
   const pic = {
     backgroundImage: `url(/images/${image})`,
@@ -22,8 +27,6 @@ export const InfoCard: React.FC<IProps> = ({
   const cardColor = {
     backgroundColor: color,
   };
-
-  const learnMore = true;
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -56,9 +59,9 @@ export const InfoCard: React.FC<IProps> = ({
           </div>
         </>
       )}
-      {learnMore && (
+      {learnMore && link && (
         <div className={styles.link_text}>
-          <Link href="/about">
+          <Link href={link}>
             <a>Learn More</a>
           </Link>
         </div>

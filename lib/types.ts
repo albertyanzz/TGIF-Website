@@ -13,3 +13,20 @@ export interface ISpotlight {
   achievements: string[];
   contentHtml: string;
 }
+
+export interface ISheets {
+  id: number;
+  name: string;
+  embed: string;
+}
+
+export interface IRSVP {
+  name: string;
+  phone: string;
+  email: string;
+  date: string;
+}
+
+export interface IPhoto {
+  photo: HTMLImageElement;
+}

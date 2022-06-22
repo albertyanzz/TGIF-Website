@@ -1,0 +1,61 @@
+.card_container {
+  background-color: #f2df74;
+  height: 300px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.text_container {
+  height: 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.event_title {
+  font-weight: 500;
+  font-size: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.event_date {
+  font-weight: 300;
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+}
+
+.button_container {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: -20px;
+}
+
+.button_container_rsvp {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -40px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  border-radius: 30px;
+  border: 0;
+  outline: 0;
+  text-align: center;
+}

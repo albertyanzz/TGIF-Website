@@ -20,8 +20,8 @@ export const Header: React.FC = () => {
           <Link href="/spotlight">
             <a>Member Spotlight</a>
           </Link>
-          <Link href="/calendar">
-            <a>Calendar</a>
+          <Link href="/events">
+            <a>Events</a>
           </Link>
           <Link href="/media">
             <a>Media</a>
