@@ -76,6 +76,19 @@
 
 .photos {
   padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo {
+  background-size: cover;
+  height: 300px;
+  width: 300px;
+  cursor: pointer;
+  border: 5px solid white;
 }
 
 .photo_button {
@@ -90,4 +103,14 @@
   font-weight: 500;
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+.photo_modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }

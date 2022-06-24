@@ -78,7 +78,7 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
           and is now open to all while maintaining longtime traditions such as a
           welcome song and closing prayers. TGIF is a bilingual club
           (English/Mandarin) built on love, fun, and excellence, inspiring
-          members to grow with their stories
+          members to grow with their stories.
         </InfoCard>
         <InfoCard
           label="Why join?"

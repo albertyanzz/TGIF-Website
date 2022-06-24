@@ -17,7 +17,7 @@ export const SpotlightCard: React.FC<IProps> = ({
   children,
 }) => {
   const pic = {
-    backgroundImage: `url(/images/${image})`,
+    backgroundImage: `url(/images/spotlight/${image})`,
   };
 
   return (
@@ -34,7 +34,7 @@ export const SpotlightCard: React.FC<IProps> = ({
             return (
               <React.Fragment key={achievement}>
                 {achievement}
-                {i + 1 === achievements.length ? <br /> : null}
+                {i + 1 === achievements.length ? null : <br />}
               </React.Fragment>
             );
           })}

@@ -2,7 +2,6 @@ import styles from "../styles/EventCard.module.css";
 import { useState } from "react";
 import { Button } from "./Button";
 import { IRSVP } from "../lib/types";
-import { postRSVP } from "../lib/google";
 
 interface IProps {
   name: string;
@@ -29,7 +28,7 @@ export const EventCard: React.FC<IProps> = ({ name, date, link }) => {
     setrEmail(event.currentTarget.value);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("submitted");
     // if (!validForm()) {
@@ -44,7 +43,11 @@ export const EventCard: React.FC<IProps> = ({ name, date, link }) => {
       date: date,
     };
 
-    postRSVP(final_rsvp);
+    const res = await fetch("/api/rsvp", {
+      method: "POST",
+      body: JSON.stringify(final_rsvp),
+    });
+    console.log(res);
 
     setRsvpSubmit(true);
   };

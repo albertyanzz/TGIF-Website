@@ -14,7 +14,7 @@ export const SpotlightIcon: React.FC<IProps> = ({
   onClick,
 }) => {
   const pic = {
-    backgroundImage: `url(/images/${image})`,
+    backgroundImage: `url(/images/spotlight/${image})`,
   };
 
   return (

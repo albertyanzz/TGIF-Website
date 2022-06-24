@@ -1,38 +1,59 @@
-import axios from "axios";
-import { ISheets, IRSVP, IPhoto } from "./types";
+import { IRSVP } from "./types";
+import { GoogleAuth } from "google-auth-library";
+import { google } from "googleapis";
 
-const sheetAPI = axios.create({
-  baseURL: "https://sheet.best/api/sheets",
-  timeout: 30 * 1000,
-});
+export const getYoutubeLinks = async () => {
+  const auth = new GoogleAuth({
+    credentials: {
+      client_email: process.env.CLIENT_EMAIL,
+      private_key: process.env.PRIVATE_KEY,
+    },
+    scopes: "https://www.googleapis.com/auth/spreadsheets",
+  });
 
-export const getSheetData = async (): Promise<ISheets[]> => {
-  const resp = await sheetAPI.get<ISheets[]>(
-    "2dc50957-cba2-430e-b3b9-17536fc9fb6d/tabs/Links"
-  );
+  const spreadsheetId = process.env.SHEETS_ID;
+  let range = "Links!A2:A";
 
-  return resp.data;
+  const client = await auth.getClient();
+
+  const service = google.sheets({ version: "v4", auth: client });
+  try {
+    const result = await service.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range,
+    });
+    return result.data.values;
+  } catch (err) {
+    // TODO (developer) - Handle exception
+    throw err;
+  }
 };
 
-export const getYoutubeEmbed = async (): Promise<string> => {
-  const resp = await getSheetData();
-  // TODO: change to reduce or mapping
-  return resp[0].embed;
-};
+export const getEvents = async () => {
+  const auth = new GoogleAuth({
+    credentials: {
+      client_email: process.env.CLIENT_EMAIL,
+      private_key: process.env.PRIVATE_KEY,
+    },
+    scopes: "https://www.googleapis.com/auth/spreadsheets",
+  });
 
-export const getFlickrEmbed = async (): Promise<string> => {
-  const resp = await getSheetData();
+  const spreadsheetId = process.env.SHEETS_ID;
+  let range = "Events!A2:C100";
 
-  return resp[1].embed;
-};
+  const client = await auth.getClient();
 
-export const postRSVP = async (rsvp: IRSVP) => {
-  sheetAPI.post("2dc50957-cba2-430e-b3b9-17536fc9fb6d/tabs/RSVP", rsvp);
-};
-
-export const getPhotos = async (): Promise<IPhoto[]> => {
-  const resp = await sheetAPI.get<IPhoto[]>(
-    "2dc50957-cba2-430e-b3b9-17536fc9fb6d/tabs/Feature_Photos"
-  );
-  return resp.data;
+  const service = google.sheets({ version: "v4", auth: client });
+  try {
+    const result = await service.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range,
+    });
+    return result.data.values;
+  } catch (err) {
+    // TODO (developer) - Handle exception
+    throw err;
+  }
 };

@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: antiquewhite;
 }
 
 .title {
@@ -24,6 +23,7 @@
   background-color: #9b4d4d;
   border-radius: 30px;
   overflow: hidden;
+  color: white;
 }
 
 .bot_section {
@@ -35,6 +35,7 @@
   border-radius: 30px;
   margin-bottom: 10vh;
   overflow: hidden;
+  color: white;
 }
 
 .tm_img {
@@ -82,4 +83,9 @@
   font-size: 32px;
   font-weight: 600;
   padding: 20px;
+}
+
+.text_content {
+  text-align: left;
+  padding: 30px;
 }

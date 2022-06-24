@@ -15,7 +15,7 @@ export const TestimonialCard: React.FC<IProps> = ({
   children,
 }) => {
   const pic = {
-    backgroundImage: `url(/images/${image})`,
+    backgroundImage: `url(/images/testimonials/${image})`,
   };
 
   return (

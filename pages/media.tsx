@@ -1,40 +1,33 @@
 import type { NextPage } from "next";
 import { GetStaticProps } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Params } from "next/dist/server/router";
-import { getYoutubeEmbed, getFlickrEmbed, getPhotos } from "../lib/google";
+import { getYoutubeLinks } from "../lib/google";
 import { getAllPhotoFiles } from "../lib/posts";
-import DOMPurify from "isomorphic-dompurify";
-import Gallery from "react-photo-gallery";
 import styles from "../styles/Media.module.css";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const photoFiles = getAllPhotoFiles();
-  const ytData = await getYoutubeEmbed();
-  const frData = await getFlickrEmbed();
+  const ytLinks = await getYoutubeLinks();
+  const photoFiles = await getAllPhotoFiles();
 
   return {
     props: {
-      ytData,
-      frData,
+      ytLinks,
       photoFiles,
     },
   };
 };
 
-const Media: NextPage<Params> = ({ ytData, frData, photoFiles }) => {
+const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
   const [featVid, setFeatVid] = useState("Av_lQz3d-dg");
+  const [featPhoto, setFeatPhoto] = useState("");
+  const [photoIsOpen, setPhotoIsOpen] = useState(false);
 
-  const otherVids = ["Av_lQz3d-dg", "s7hjYJC1ASg", "Ctl6xrrNhm0"];
-
-  // console.log(photoFiles);
-
-  const photos = photoFiles.map((photo: { id: string }) => {
-    return { src: `images/featured/${photo.id}`, width: 1, height: 1 };
+  const ytIds = ytLinks.map((link: string[]) => {
+    return link[0].split("=")[1];
   });
-
-  // console.log(photos);
 
   return (
     <div className={styles.container}>
@@ -53,7 +46,7 @@ const Media: NextPage<Params> = ({ ytData, frData, photoFiles }) => {
         </div>
         <div className={styles.right_menu}>
           <div className={styles.video_bar}>
-            {otherVids.map((video: string) => {
+            {ytIds.map((video: string) => {
               return (
                 <div
                   key={video}
@@ -82,8 +75,34 @@ const Media: NextPage<Params> = ({ ytData, frData, photoFiles }) => {
         </a>
       </Link>
       <div className={styles.photos}>
-        <Gallery photos={photos}></Gallery>
+        {photoFiles.map((photo: { id: string }) => {
+          return (
+            <div
+              key={photo.id}
+              className={styles.photo}
+              style={{ backgroundImage: `url('images/featured/${photo.id}')` }}
+              onClick={() => {
+                setFeatPhoto(photo.id);
+                setPhotoIsOpen(true);
+              }}
+            ></div>
+          );
+        })}
       </div>
+      {photoIsOpen && (
+        <div
+          className={styles.photo_modal}
+          onClick={() => {
+            setPhotoIsOpen(false);
+          }}
+        >
+          <Image
+            src={`/images/featured/${featPhoto}`}
+            layout="fill"
+            objectFit="contain"
+          ></Image>
+        </div>
+      )}
     </div>
   );
 };
