@@ -1,0 +1,16 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  width: 100%;
+  text-align: left;
+  font-size: 32px;
+  font-weight: 400;
+  color: black;
+  padding: 30px;
+  margin-left: 100px;
+}

@@ -1,0 +1,83 @@
+.card_outer {
+  background-color: black;
+  max-width: 30vw;
+  height: 300px;
+  width: 300px;
+  border-radius: 10%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: default;
+}
+
+.card_banner {
+  height: 40%;
+  width: 100%;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_sphere {
+  background-image: url(../assets/tm_sphere.svg);
+  background-position: 30%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.card_text {
+  background-color: white;
+  text-align: center;
+  height: 20%;
+  min-height: 25px;
+  min-width: 200%;
+}
+
+.card_pic {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: inherit;
+}
+
+.link_text {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  color: white;
+}
+
+.description_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.description {
+  color: white;
+  text-align: center;
+}
