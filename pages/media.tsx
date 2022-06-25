@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -10,14 +10,14 @@ import styles from "../styles/Media.module.css";
 import { useMediaQuery } from "@mui/material";
 import { theme } from "../constants/theme";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const ytLinks = await getYoutubeLinks();
+export const getServerSideProps: GetServerSideProps = async () => {
   const photoFiles = await getAllPhotoFiles();
+  const ytLinks = await getYoutubeLinks();
 
   return {
     props: {
-      ytLinks,
       photoFiles,
+      ytLinks,
     },
   };
 };

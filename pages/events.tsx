@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { Params } from "next/dist/server/router";
 import { EventCard } from "../components/EventCard";
 import styles from "../styles/Events.module.css";
@@ -7,7 +8,7 @@ import { useMediaQuery } from "@mui/material";
 import { theme } from "../constants/theme";
 import { getEvents } from "../lib/google";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const events = await getEvents();
 
   return {
