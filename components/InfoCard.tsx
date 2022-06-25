@@ -1,7 +1,6 @@
 import styles from "../styles/InfoCard.module.css";
 import Link from "next/link";
 import { ReactNode, useState } from "react";
-import { Url } from "url";
 
 interface IProps {
   children: ReactNode;

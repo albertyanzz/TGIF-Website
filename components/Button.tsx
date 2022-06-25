@@ -1,10 +1,13 @@
 import { ReactNode, useState } from "react";
+import Spinner from "./Spinner";
+import styles from "../styles/Button.module.css";
 
 interface IProps {
   color: string;
   width: string;
   height?: string;
   type?: string;
+  isLoading?: boolean;
   onClick?: React.MouseEventHandler;
   children: ReactNode;
 }
@@ -12,6 +15,7 @@ interface IProps {
 export const Button: React.FC<IProps> = ({
   color,
   width,
+  isLoading,
   children,
   height,
   type,
@@ -48,6 +52,7 @@ export const Button: React.FC<IProps> = ({
       onClick={onClick}
     >
       {children}
+      {isLoading && <Spinner className={styles.spinner} />}
     </button>
   );
 };

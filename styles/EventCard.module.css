@@ -59,3 +59,9 @@
   outline: 0;
   text-align: center;
 }
+
+.error_message {
+  color: red;
+  font-size: 12px;
+  height: 0;
+}

@@ -2,6 +2,7 @@ import styles from "../styles/EventCard.module.css";
 import { useState } from "react";
 import { Button } from "./Button";
 import { IRSVP } from "../lib/types";
+import validator from "validator";
 
 interface IProps {
   name: string;
@@ -15,6 +16,10 @@ export const EventCard: React.FC<IProps> = ({ name, date, link }) => {
   const [rname, setrName] = useState("");
   const [rphone, setrPhone] = useState("");
   const [remail, setrEmail] = useState("");
+
+  const [submitIsLoading, setSubmitIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleNameChange = (event: React.FormEvent<HTMLInputElement>) => {
     setrName(event.currentTarget.value);
@@ -30,11 +35,25 @@ export const EventCard: React.FC<IProps> = ({ name, date, link }) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("submitted");
-    // if (!validForm()) {
-    //     setSubmit(false);
-    //     return;
-    // }
+    setError(false);
+    setSubmitIsLoading(true);
+
+    if (rname === "") {
+      setErrorMessage("Please enter your name");
+      setError(true);
+      setSubmitIsLoading(false);
+      return;
+    } else if (!validator.isMobilePhone(rphone)) {
+      setErrorMessage("Please enter a valid phone number");
+      setError(true);
+      setSubmitIsLoading(false);
+      return;
+    } else if (!validator.isEmail(remail)) {
+      setErrorMessage("Please enter a valid email");
+      setError(true);
+      setSubmitIsLoading(false);
+      return;
+    }
 
     const final_rsvp: IRSVP = {
       name: rname,
@@ -48,7 +67,7 @@ export const EventCard: React.FC<IProps> = ({ name, date, link }) => {
       body: JSON.stringify(final_rsvp),
     });
     console.log(res);
-
+    setSubmitIsLoading(false);
     setRsvpSubmit(true);
   };
 
@@ -91,6 +110,7 @@ export const EventCard: React.FC<IProps> = ({ name, date, link }) => {
             value={remail}
             onChange={handleEmailChange}
           />
+          {error && <div className={styles.error_message}>{errorMessage}</div>}
           <div className={styles.button_container_rsvp}>
             <Button
               color="#F77E21"
@@ -102,8 +122,14 @@ export const EventCard: React.FC<IProps> = ({ name, date, link }) => {
             >
               {"<"}
             </Button>
-            <Button color="#F77E21" width="70%" height="40%" type="submit">
-              RSVP
+            <Button
+              color="#F77E21"
+              width="70%"
+              height="40%"
+              type="submit"
+              isLoading={submitIsLoading}
+            >
+              {submitIsLoading ? "" : "RSVP"}
             </Button>
           </div>
         </div>

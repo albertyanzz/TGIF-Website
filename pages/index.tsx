@@ -1,6 +1,5 @@
 import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
-import { useState } from "react";
 import { Params } from "next/dist/server/router";
 import { getPostsDataByFolder } from "../lib/posts";
 import { ITestimonial } from "../lib/types";
@@ -9,6 +8,8 @@ import { InfoCard } from "../components/InfoCard";
 import { TestimonialCard } from "../components/TestimonialCard";
 import { Button } from "../components/Button";
 import DOMPurify from "isomorphic-dompurify";
+import { useMediaQuery } from "@mui/material";
+import { theme } from "../constants/theme";
 
 export const getStaticProps: GetStaticProps = async () => {
   const testimonialDataPromise = await getPostsDataByFolder("testimonials");
@@ -21,14 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage<Params> = ({ testimonialData }) => {
-  const textArray = [
-    "have fun",
-    "learn",
-    "are family",
-    "grow with our stories",
-  ];
-
-  const [changingText, setChangingText] = useState("have fun");
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const buttonStyle = {
     color: "#F4BA8D",
@@ -54,7 +48,7 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
           </div>
         </div>
       </div>
-      <div className={styles.info_boxes}>
+      <div className={isMobile ? styles.mobile_info_boxes : styles.info_boxes}>
         <InfoCard
           label="What is Toastmasters?"
           image="info_tm.jpg"
@@ -96,17 +90,6 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
       <div className={styles.testimonials}>
         <div className={styles.title_text}>Member Testimonials</div>
         <div className={styles.testimonial_cards}>
-          {/* <TestimonialCard
-            name={testimonialData[0].name}
-            title={testimonialData[0].title}
-            image={testimonialData[0].image}
-          >
-            <div
-              dangerouslySetInnerHTML={{
-                __html: testimonialData[0].contentHtml,
-              }}
-            ></div>
-          </TestimonialCard> */}
           {testimonialData.map((testimonial: ITestimonial) => (
             <TestimonialCard
               name={testimonial.name}
@@ -132,16 +115,22 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
           <br />
           Zoom link: https://us02web.zoom.us/j/8675406
         </div>
-        <div className={styles.info_links}>
-          <Link href="/events">
-            <Button {...buttonStyle}>RSVP</Button>
-          </Link>
-          <Link href="/membership">
-            <Button {...buttonStyle}>Membership</Button>
-          </Link>
-          <Link href="/role">
-            <Button {...buttonStyle}>Sign up for role</Button>
-          </Link>
+        <div className={isMobile ? styles.mobile_info : styles.info_links}>
+          <div className={isMobile ? styles.mobile_button : styles.link_button}>
+            <Link href="/events">
+              <Button {...buttonStyle}>RSVP</Button>
+            </Link>
+          </div>
+          <div className={isMobile ? styles.mobile_button : styles.link_button}>
+            <Link href="/membership">
+              <Button {...buttonStyle}>Membership</Button>
+            </Link>
+          </div>
+          <div className={isMobile ? styles.mobile_button : styles.link_button}>
+            <Link href="/role">
+              <Button {...buttonStyle}>Sign up for role</Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
