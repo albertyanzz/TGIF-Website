@@ -19,6 +19,7 @@
     "@types/dompurify": "^2.3.3",
     "@types/jsdom": "^16.2.14",
     "@types/react-fontawesome": "^1.6.5",
+    "@types/validator": "^13.7.3",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "dompurify": "^2.3.8",
@@ -32,9 +33,11 @@
     "react-dom": "17.0.2",
     "react-horizontal-scrolling-menu": "^2.8.2",
     "react-photo-gallery": "^8.0.0",
+    "react-responsive": "^9.0.0-beta.10",
     "react-text-transition": "^3.0.2",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.41",

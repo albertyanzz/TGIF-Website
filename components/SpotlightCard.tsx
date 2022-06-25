@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
 import styles from "../styles/SpotlightCard.module.css";
+import { useMediaQuery } from "@mui/material";
+import { theme } from "../constants/theme";
 
 interface IProps {
   name: string;
@@ -16,14 +18,19 @@ export const SpotlightCard: React.FC<IProps> = ({
   achievements,
   children,
 }) => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const pic = {
     backgroundImage: `url(/images/spotlight/${image})`,
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.picture} style={pic} />
-      <div className={styles.content}>
+    <div className={isMobile ? styles.mobile_container : styles.container}>
+      <div
+        className={isMobile ? styles.mobile_picture : styles.picture}
+        style={pic}
+      />
+      <div className={isMobile ? styles.mobile_content : styles.content}>
         <div className={styles.title}>
           <div className={styles.position}>{position}</div>
           <div className={styles.name}>{name}</div>

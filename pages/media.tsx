@@ -7,6 +7,8 @@ import { Params } from "next/dist/server/router";
 import { getYoutubeLinks } from "../lib/google";
 import { getAllPhotoFiles } from "../lib/posts";
 import styles from "../styles/Media.module.css";
+import { useMediaQuery } from "@mui/material";
+import { theme } from "../constants/theme";
 
 export const getStaticProps: GetStaticProps = async () => {
   const ytLinks = await getYoutubeLinks();
@@ -21,22 +23,28 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
-  const [featVid, setFeatVid] = useState("Av_lQz3d-dg");
-  const [featPhoto, setFeatPhoto] = useState("");
-  const [photoIsOpen, setPhotoIsOpen] = useState(false);
-
   const ytIds = ytLinks.map((link: string[]) => {
     return link[0].split("=")[1];
   });
 
+  const [featVid, setFeatVid] = useState(ytIds[0]);
+  const [featPhoto, setFeatPhoto] = useState("");
+  const [photoIsOpen, setPhotoIsOpen] = useState(false);
+
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>Featured Videos</div>
-      <div className={styles.youtube_container}>
+      <div
+        className={
+          isMobile ? styles.mobile_youtube_container : styles.youtube_container
+        }
+      >
         <div className={styles.main_video}>
           <iframe
-            width="1280"
-            height="400"
+            width={isMobile ? "300" : "1280"}
+            height={isMobile ? "200" : "400"}
             src={`https://www.youtube.com/embed/${featVid}`}
             title="YouTube video player"
             frameBorder="0"
@@ -44,8 +52,10 @@ const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
             allowFullScreen
           ></iframe>
         </div>
-        <div className={styles.right_menu}>
-          <div className={styles.video_bar}>
+        <div className={isMobile ? styles.bottom_menu : styles.right_menu}>
+          <div
+            className={isMobile ? styles.mobile_video_bar : styles.video_bar}
+          >
             {ytIds.map((video: string) => {
               return (
                 <div

@@ -9,7 +9,26 @@
   font-weight: 600;
 }
 
-/* .toolbar {
-  min-height: 20px;
-  height: 20px;
-} */
+.mobile_links {
+  background-color: #f4ba8d;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer {
+  width: 100%;
+}
+
+.children {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

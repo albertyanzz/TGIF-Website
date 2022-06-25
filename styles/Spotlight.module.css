@@ -6,13 +6,11 @@
 }
 
 .title {
-  width: 100%;
   text-align: left;
   font-size: 32px;
   font-weight: 400;
   color: black;
-  padding: 30px;
-  margin-left: 100px;
+  padding-top: 30px;
 }
 
 .icon_container {

@@ -2,14 +2,22 @@ import type { NextPage } from "next";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import styles from "../styles/About.module.css";
+import { useMediaQuery } from "@mui/material";
+import { theme } from "../constants/theme";
 
 const About: NextPage = ({}) => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>About</div>
       <div id="toastmasters" className={styles.section}>
-        <div className={styles.tm_img} />
-        <div className={styles.text_container}>
+        {!isMobile && <div className={styles.tm_img} />}
+        <div
+          className={
+            isMobile ? styles.mobile_text_container : styles.text_container
+          }
+        >
           <div className={styles.text_title}>What is Toastmasters?</div>
           <div className={styles.text_content}>
             Toastmasters International is a nonprofit educational organization
@@ -20,7 +28,11 @@ const About: NextPage = ({}) => {
         </div>
       </div>
       <div id="tgif" className={styles.section}>
-        <div className={styles.text_container}>
+        <div
+          className={
+            isMobile ? styles.mobile_text_container : styles.text_container
+          }
+        >
           <div className={styles.text_title}>Who is TGIF?</div>
           <div className={styles.text_content}>
             Established in 2013, TGIF started off as a Christian Toastmasters
@@ -30,11 +42,20 @@ const About: NextPage = ({}) => {
             members to grow with their stories
           </div>
         </div>
-        <div className={styles.tgif_img} />
+        {!isMobile && <div className={styles.tgif_img} />}
       </div>
-      <div id="join" className={styles.bot_section}>
-        <div className={styles.why_img} />
-        <div className={styles.bot_text_container}>
+      <div
+        id="join"
+        className={isMobile ? styles.mobile_bot_section : styles.bot_section}
+      >
+        {!isMobile && <div className={styles.why_img} />}
+        <div
+          className={
+            isMobile
+              ? styles.mobile_bot_text_container
+              : styles.bot_text_container
+          }
+        >
           <div className={styles.text_title}>Why should you join?</div>
           <div className={styles.text_content}>
             TGIF is a championship caliber club, holding the record of an 8 year
@@ -42,7 +63,6 @@ const About: NextPage = ({}) => {
             With a diverse group of members and a mentorship program, there is
             an opportunity to grow for everyone.
           </div>
-          <div></div>
           <div>
             <Link href="/membership">
               <Button width="200px" color="#F4BA8D">
