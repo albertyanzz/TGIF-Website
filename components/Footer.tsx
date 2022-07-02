@@ -53,14 +53,15 @@ export const Footer: React.FC = () => {
             <input
               className={styles.input}
               type="text"
-              placeholder="Email"
+              placeholder="Input your email"
               value={email}
               onChange={handleEmailChange}
             />
             <Button
-              color="#F2DF74"
-              width="200px"
-              height="35px"
+              color="#d61c4e"
+              width="150px"
+              height="37px"
+              border="0px"
               type="submit"
               isLoading={emailIsLoading}
             >

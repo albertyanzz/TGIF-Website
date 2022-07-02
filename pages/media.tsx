@@ -35,6 +35,41 @@ const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.title}>Featured Photos</div>
+      {/* <Link href="https://www.flickr.com/photos/durbanbay/albums/with/72177720298516816">
+        <a className={styles.photo_button}>
+          <p>View More on Flickr</p>
+        </a>
+      </Link> */}
+      <div className={styles.photos}>
+        {photoFiles.map((photo: { id: string }) => {
+          return (
+            <div
+              key={photo.id}
+              className={styles.photo}
+              style={{ backgroundImage: `url('images/featured/${photo.id}')` }}
+              onClick={() => {
+                setFeatPhoto(photo.id);
+                setPhotoIsOpen(true);
+              }}
+            ></div>
+          );
+        })}
+      </div>
+      {photoIsOpen && (
+        <div
+          className={styles.photo_modal}
+          onClick={() => {
+            setPhotoIsOpen(false);
+          }}
+        >
+          <Image
+            src={`/images/featured/${featPhoto}`}
+            layout="fill"
+            objectFit="contain"
+          ></Image>
+        </div>
+      )}
       <div className={styles.title}>Featured Videos</div>
       <div
         className={
@@ -78,41 +113,6 @@ const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
           </Link>
         </div>
       </div>
-      <div className={styles.title}>Featured Photos</div>
-      <Link href="https://www.flickr.com/photos/durbanbay/albums/with/72177720298516816">
-        <a className={styles.photo_button}>
-          <p>View More on Flickr</p>
-        </a>
-      </Link>
-      <div className={styles.photos}>
-        {photoFiles.map((photo: { id: string }) => {
-          return (
-            <div
-              key={photo.id}
-              className={styles.photo}
-              style={{ backgroundImage: `url('images/featured/${photo.id}')` }}
-              onClick={() => {
-                setFeatPhoto(photo.id);
-                setPhotoIsOpen(true);
-              }}
-            ></div>
-          );
-        })}
-      </div>
-      {photoIsOpen && (
-        <div
-          className={styles.photo_modal}
-          onClick={() => {
-            setPhotoIsOpen(false);
-          }}
-        >
-          <Image
-            src={`/images/featured/${featPhoto}`}
-            layout="fill"
-            objectFit="contain"
-          ></Image>
-        </div>
-      )}
     </div>
   );
 };

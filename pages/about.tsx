@@ -11,7 +11,7 @@ const About: NextPage = ({}) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>About</div>
-      <div id="toastmasters" className={styles.section}>
+      <div id="toastmasters" className={styles.tm_section}>
         {!isMobile && <div className={styles.tm_img} />}
         <div
           className={
@@ -27,7 +27,7 @@ const About: NextPage = ({}) => {
           </div>
         </div>
       </div>
-      <div id="tgif" className={styles.section}>
+      <div id="tgif" className={styles.tgif_section}>
         <div
           className={
             isMobile ? styles.mobile_text_container : styles.text_container

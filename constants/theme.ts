@@ -36,7 +36,7 @@ export const COLORS = {
 export const theme = createTheme({
   palette: {
     primary: {
-      main: COLORS.PEACH,
+      main: "#074392",
     },
     secondary: {
       main: COLORS.YELLOW,

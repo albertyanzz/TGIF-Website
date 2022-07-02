@@ -65,16 +65,19 @@
 
 .position {
   font-weight: 100;
+  font-size: 20px;
 }
 
 .name {
-  font-weight: 400;
+  font-weight: 800;
+  font-size: 28px;
 }
 
 .summary {
   font-weight: 200;
   padding-top: 50px;
   padding-bottom: 50px;
+  font-size: 20px;
 }
 
 .achievements {

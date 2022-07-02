@@ -40,11 +40,13 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
         <div className={styles.sub_text}>
           <div>Here we...</div>
           <div className={styles.changing_text_wrapper}>
-            <span className={styles.changing_text}>have fun</span>
+            <span className={styles.changing_text}>grow with our stories</span>
+            <span className={styles.changing_text}>
+              have fun, love and excellence
+            </span>
             <span className={styles.changing_text}>learn</span>
             <span className={styles.changing_text}>are family</span>
             <span className={styles.changing_text}>grow with our stories</span>
-            <span className={styles.changing_text}>have fun</span>
           </div>
         </div>
       </div>
@@ -52,7 +54,7 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
         <InfoCard
           label="What is Toastmasters?"
           image="info_tm.jpg"
-          color="#F2DF74"
+          color="#d61c4e"
           learnMore={true}
           link="/about#toastmasters"
         >
@@ -118,7 +120,7 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
         <div className={isMobile ? styles.mobile_info : styles.info_links}>
           <div className={isMobile ? styles.mobile_button : styles.link_button}>
             <Link href="/events">
-              <Button {...buttonStyle}>RSVP</Button>
+              <Button {...buttonStyle}>Event Sign Up</Button>
             </Link>
           </div>
           <div className={isMobile ? styles.mobile_button : styles.link_button}>
