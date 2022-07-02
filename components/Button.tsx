@@ -8,6 +8,7 @@ interface IProps {
   height?: string;
   type?: string;
   isLoading?: boolean;
+  border?: string;
   onClick?: React.MouseEventHandler;
   children: ReactNode;
 }
@@ -16,6 +17,7 @@ export const Button: React.FC<IProps> = ({
   color,
   width,
   isLoading,
+  border,
   children,
   height,
   type,
@@ -28,7 +30,7 @@ export const Button: React.FC<IProps> = ({
 
   const style = {
     backgroundColor: isHovered ? "white" : color,
-    borderRadius: "1000px",
+    borderRadius: border ? border : "1000px",
     width: width,
     height: height ? height : "50px",
     border: `2px solid ${color}`,

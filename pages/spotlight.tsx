@@ -26,7 +26,7 @@ const Spotlight: NextPage<Params> = ({ spotlightData }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>Member Spotlight</div>
+      {/* <div className={styles.title}>Member Spotlight</div> */}
       <SpotlightCard {...spotlightMember}>
         <div
           dangerouslySetInnerHTML={{

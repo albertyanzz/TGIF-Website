@@ -15,14 +15,12 @@
 }
 
 .input {
-  width: 200px;
+  width: 400px;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 0px;
   border: 0;
   outline: 0;
   text-align: center;
-  margin-right: 20px;
-  margin-left: 20px;
 }
 
 .mobile_contact {

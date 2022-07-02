@@ -27,10 +27,10 @@ export const Header: React.FC = () => {
         <a className={styles.children}>Member Spotlight</a>
       </Link>
       <Link href="/events">
-        <a className={styles.children}>Events</a>
+        <a className={styles.children}>Upcoming Events</a>
       </Link>
       <Link href="/media">
-        <a className={styles.children}>Media</a>
+        <a className={styles.children}>Highlights</a>
       </Link>
       <Link href="/role">
         <a className={styles.children}>Role Sign Up</a>
@@ -75,10 +75,10 @@ export const Header: React.FC = () => {
                 <a>Member Spotlight</a>
               </Link>
               <Link href="/events">
-                <a>Events</a>
+                <a>Upcoming Events</a>
               </Link>
               <Link href="/media">
-                <a>Media</a>
+                <a>Highlights</a>
               </Link>
               <Link href="/role">
                 <a>Role Sign Up</a>

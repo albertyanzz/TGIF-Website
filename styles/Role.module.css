@@ -3,11 +3,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       rgba(255, 255, 255, 0.6),
       rgba(255, 255, 255, 0.6)
     ),
-    url("../public/images/role.jpg");
+    url("../public/images/role.jpg"); */
+  background-color: #e7feff;
   background-size: cover;
   background-position: center;
 }
