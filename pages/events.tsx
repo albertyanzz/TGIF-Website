@@ -25,22 +25,26 @@ const Calendar: NextPage<Params> = ({ events }) => {
     <div className={styles.container}>
       <div className={styles.title}>Upcoming Events</div>
       <div className={isMobile ? styles.mobile_events : styles.events}>
-        {events.map((event: string[]) => {
-          return (
-            <div
-              className={
-                isMobile ? styles.mobile_event_card : styles.event_card
-              }
-              key={event[0]}
-            >
-              <EventCard
-                name={event[0]}
-                date={event[1]}
-                link={event[2]}
-              ></EventCard>
-            </div>
-          );
-        })}
+        {events.length === 0 ? (
+          <div>Check back soon for upcoming events!</div>
+        ) : (
+          events.map((event: string[]) => {
+            return (
+              <div
+                className={
+                  isMobile ? styles.mobile_event_card : styles.event_card
+                }
+                key={event[0]}
+              >
+                <EventCard
+                  name={event[0]}
+                  date={event[1]}
+                  link={event[2]}
+                ></EventCard>
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );

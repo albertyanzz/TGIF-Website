@@ -1,15 +1,26 @@
 ---
-id: 2
+id: 3
 name: Iris Chou
-position: Member
+position: Member since 2014
 image: 4.IrisChou.jpg
-achievements: [2020-2021 TGIF President, 2017-2018 Area N3 Director]
+achievements: [2014-2015 Deputy Sergeant-at-arms TGIF Club,
+2015-2016 VP Education TGIF Club,
+2016-2017 VP Membership TGIF Club,
+2017-2018 Deputy Secretary TGIF Club,
+2018-2019 VP Public Relations TGIF Club,
+2020-2021 President TGIF Club,
+2021-2022 Secretary TGIF Club,
+]
 ---
 
-Three things I love about TGIF are the strong bonding within members, the quality meeting we cultivate, the spirit of learning by doing and have fun.
+### What are the 3 things you love about TGIF?
 
-I joined TGIF in June 2014, for the past 8 years, I have 5 absences. Friday night is always TGIF night, the night I released the stress and recharged myself.
+Three things I love about TGIF are the strong bonding between members, the high quality meetings we organize and the spirit of learning by doing and having fun.
 
-TGIF tradition is to maintain quality meeting, with this, I prepare every assignment in a serious attitude, and further enhance public speaking skills. Through many officer roles I performed, I connected and cared members and won many friendships.
+I joined TGIF in June 2014. For the past 8 years, I only had 5 absences. Friday night is always TGIF night, the night I release my stress and recharge myself.
 
-At my TGIF President term, I received 2020-2021 President’s Distinguished trophy. Back to 2014, I was dual member of other Toastmasters awarded as excellent service as N3 Director 2017-2018, TGIF is the club we grow with our stories with love, fun and excellence. We will carry the torch with these three spirits for sure.
+### How has TGIF changed you?
+
+TGIF’s tradition is high quality meetings. With that in mind, I prepare every assignment seriously, which further improves my public speaking skills. Through many officer roles I performed, I connected with members and earned many friendships.
+
+During my TGIF President term, I received the 2020-2021 President’s Distinguished trophy. Back in 2014, I was a dual member of another Toastmasters Club and was awarded for excellent service as N3 Director 2017-2018. TGIF is the club where we grow with our stories, with love, fun and excellence. We will carry the torch and continue these three spirits for sure.

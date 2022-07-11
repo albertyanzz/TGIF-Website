@@ -1,6 +1,6 @@
 ---
 name: Victoria Jen
-title: Correspondent
+title: Media Industry
 image: 4.Victoria.PNG
 ---
 

@@ -23,7 +23,7 @@ export const getYoutubeLinks = async () => {
       spreadsheetId,
       range,
     });
-    return result.data.values;
+    return result.data.values ? result.data.values : [];
   } catch (err) {
     // TODO (developer) - Handle exception
     throw err;
@@ -51,7 +51,7 @@ export const getEvents = async () => {
       spreadsheetId,
       range,
     });
-    return result.data.values;
+    return result.data.values ? result.data.values : [];
   } catch (err) {
     // TODO (developer) - Handle exception
     throw err;

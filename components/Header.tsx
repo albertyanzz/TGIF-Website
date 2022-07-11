@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
       <Link href="/events">
         <a className={styles.children}>Upcoming Events</a>
       </Link>
-      <Link href="/media">
+      <Link href="/highlights">
         <a className={styles.children}>Highlights</a>
       </Link>
       <Link href="/role">
@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
               <Link href="/events">
                 <a>Upcoming Events</a>
               </Link>
-              <Link href="/media">
+              <Link href="/highlights">
                 <a>Highlights</a>
               </Link>
               <Link href="/role">
