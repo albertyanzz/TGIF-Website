@@ -29,7 +29,7 @@ export default async function handler(req, res) {
           values: [[rsvp.name, rsvp.phone, rsvp.email, rsvp.date]],
         },
       });
-      sendEmail(rsvp.name, true);
+      await sendEmail(rsvp.name, true);
       res.status(200).json({ message: "success" });
       return result;
     } catch (err) {
