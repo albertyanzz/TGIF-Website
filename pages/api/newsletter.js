@@ -29,7 +29,8 @@ export default async function handler(req, res) {
           values: [[email]],
         },
       });
-      await sendEmail(email, false);
+      const result_2 = await sendEmail(email, false);
+      console.log(result_2);
       res.status(200).json({ message: "success" });
       return result;
     } catch (err) {
