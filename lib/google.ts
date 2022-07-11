@@ -91,7 +91,6 @@ export const sendEmail = async (person: string, rsvp: boolean) => {
   sgMail.setApiKey(process.env.EMAIL_KEY!);
   const emails = await getEmail();
 
-  console.log("sending emails");
   for (const email of emails) {
     const msg = {
       to: email, // Change to your recipient
@@ -104,17 +103,13 @@ export const sendEmail = async (person: string, rsvp: boolean) => {
         ? `<p>${person} has signed up for an event</p>`
         : `<p>${person} has signed up to join the newsletter</p>`,
     };
-    sgMail
+    await sgMail
       .send(msg)
-      .then((res) => {
-        console.log(res);
+      .then(() => {
+        console.log("Email sent");
       })
       .catch((error) => {
         console.error(error);
       });
-
-    console.log("sent an email");
   }
-
-  console.log("finished");
 };
