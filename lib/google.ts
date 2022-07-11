@@ -90,26 +90,27 @@ export const getEmail = async () => {
 export const sendEmail = async (person: string, rsvp: boolean) => {
   sgMail.setApiKey(process.env.EMAIL_KEY!);
   const emails = await getEmail();
-
-  for (const email of emails) {
-    const msg = {
-      to: email, // Change to your recipient
-      from: "albertyanalbert@gmail.com", // Change to your verified sender
-      subject: rsvp ? "New event Signup" : "New newsletter signup",
-      text: rsvp
-        ? `${person} has signed up for an event`
-        : `${person} has signed up to join the newsletter`,
-      html: rsvp
-        ? `<p>${person} has signed up for an event</p>`
-        : `<p>${person} has signed up to join the newsletter</p>`,
-    };
-    await sgMail
-      .send(msg)
-      .then(() => {
-        console.log("Email sent");
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  const emails_m = emails.map((email) => {
+    return email[0];
+  });
+  const msg = {
+    to: emails_m, // Change to your recipient
+    from: "albertyanalbert@gmail.com", // Change to your verified sender
+    subject: rsvp ? "New event Signup" : "New newsletter signup",
+    text: rsvp
+      ? `${person} has signed up for an event`
+      : `${person} has signed up to join the newsletter`,
+    html: rsvp
+      ? `<p>${person} has signed up for an event</p>`
+      : `<p>${person} has signed up to join the newsletter</p>`,
+  };
+  await sgMail
+    .send(msg)
+    .then((res) => {
+      console.log("Email sent");
+      return res;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 };
