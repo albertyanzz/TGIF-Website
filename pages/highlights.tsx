@@ -60,12 +60,12 @@ const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
         marathons, debate contests, workshops, outings and themed parties are
         highly anticipated throughout the Toastmasters community in Taiwan.
       </div>
-      <div className={styles.photos}>
+      <div className={isMobile ? styles.mobile_photos : styles.photos}>
         {photoFiles.map((photo: { id: string }) => {
           return (
             <div
               key={photo.id}
-              className={styles.photo}
+              className={isMobile ? styles.mobile_photo : styles.photo}
               style={{ backgroundImage: `url('images/featured/${photo.id}')` }}
               onClick={() => {
                 setFeatPhoto(photo.id);
