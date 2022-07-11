@@ -89,9 +89,9 @@ export const getEmail = async () => {
 
 export const sendEmail = async (person: string, rsvp: boolean) => {
   sgMail.setApiKey(process.env.EMAIL_KEY!);
-  console.log(process.env.EMAIL_KEY);
   const emails = await getEmail();
 
+  console.log("sending emails");
   for (const email of emails) {
     const msg = {
       to: email, // Change to your recipient
@@ -112,5 +112,9 @@ export const sendEmail = async (person: string, rsvp: boolean) => {
       .catch((error) => {
         console.error(error);
       });
+
+    console.log("sent an email");
   }
+
+  console.log("finished");
 };
