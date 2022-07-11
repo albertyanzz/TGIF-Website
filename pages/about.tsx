@@ -10,7 +10,7 @@ const About: NextPage = ({}) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>About</div>
+      <div className={styles.title}>About TGIF Toastmasters</div>
       <div id="toastmasters" className={styles.tm_section}>
         {!isMobile && <div className={styles.tm_img} />}
         <div
@@ -22,8 +22,33 @@ const About: NextPage = ({}) => {
           <div className={styles.text_content}>
             Toastmasters International is a nonprofit educational organization
             that teaches public speaking and leadership skills through a
-            worldwide network of clubs in 145 countries. In Taiwan, there are
-            nearly 180 clubs in Chinese, English, Japanese and Taiwanese.
+            worldwide network of clubs. Headquartered in the US, the
+            organization's membership exceeds 300,000 in more than 15,800 clubs
+            in 149 countries. Since 1924, Toastmasters International has helped
+            people from diverse backgrounds become more confident speakers,
+            communicators, and leaders. For more information about Toastmasters
+            International, please go to{" "}
+            <a
+              href="https://www.toastmasters.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://www.toastmasters.org/
+            </a>
+            . <br />
+            <br />
+            In Taiwan, the first Toastmasters club was founded in 1958. Now,
+            there are 182 active clubs islandwide in Chinese, English, Japanese
+            and Taiwanese. For more information about Toastmasters in Taiwan,
+            please go to{" "}
+            <a
+              href="https://www.toastmasters.org.tw/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://www.toastmasters.org.tw/
+            </a>
+            .
           </div>
         </div>
       </div>
@@ -35,11 +60,19 @@ const About: NextPage = ({}) => {
         >
           <div className={styles.text_title}>Who is TGIF?</div>
           <div className={styles.text_content}>
-            Established in 2013, TGIF started off as a Christian Toastmasters
-            club and is now open to all while maintaining longtime traditions
-            such as a welcome song and closing prayers. TGIF is a bilingual club
-            (English/Mandarin) built on love, fun, and excellence, inspiring
-            members to grow with their stories
+            Established in 2013, “Thank God It’s Friday (TGIF)” Bilingual
+            Christian Toastmaster Club began as a place where Christians can
+            practice praising the Lord. It has since diversified and welcomes
+            anyone who is interested in improving their public speaking and
+            leadership skills. The club has strong Christian traditions of
+            opening songs, group huddles and closing prayers. <br />
+            <br />
+            Its signature events such as speech marathons, debate contests,
+            workshops, outings and themed parties are highly anticipated events
+            throughout the Toastmaster community in Taiwan. Each club meeting
+            has elements of Mandarin and English and members can choose which
+            language they want to speak. The TGIF community is built on love,
+            fun, and excellence, inspiring members to grow with their stories.
           </div>
         </div>
         {!isMobile && <div className={styles.tgif_img} />}
@@ -58,10 +91,19 @@ const About: NextPage = ({}) => {
         >
           <div className={styles.text_title}>Why should you join?</div>
           <div className={styles.text_content}>
-            TGIF is a championship caliber club, holding the record of an 8 year
-            streak of top 3 national finalists in the annual speech contest.
-            With a diverse group of members and a mentorship program, there is
-            an opportunity to grow for everyone.
+            You should join TGIF if you are looking to improve your English or
+            Mandarin speaking capability. TGIF is a championship caliber club,
+            holding the record of producing the top 3 national finalists each
+            year in the Annual Toastmasters National Contests since its
+            founding. <br />
+            <br />
+            It is also a place where you will meet highly motivated and
+            interesting individuals who want to learn and improve. More than 50%
+            of our members are English native speakers from abroad or Taiwanese
+            who have lived abroad. It has a strong tradition of mentoring and
+            supporting member growth. By joining, you will definitely improve
+            and become a better version of yourself, with new friends along the
+            way too!
           </div>
           <div>
             <Link href="/membership">

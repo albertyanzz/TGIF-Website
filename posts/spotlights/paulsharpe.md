@@ -1,13 +1,21 @@
 ---
-id: 0
+id: 1
 name: Paul Sharpe
-position: Member
+position: Member since 2014
 image: 2.PaulSharpe.jpg
 achievements:
   [
-    2014/2015 - Vice President of Education,
-    2015/2016 - President,
-    2016/2017 - Charter President of Born to Shine,
+    2014-2015 Vice President of Education TGIF Club,
+2015-2016 President TGIF Club,
+2015-2017 - Area H1 Director,
+2015 National Table Topics Contest 2nd Place,
+2015 National Speech Contest Top 6 Finalist,
+2016-2017 Founding President Born to Shine Club,
+2017 National Table Topics Contest 2nd Place,
+2019 National International Evaluation Contest 1st Place,
+2019 National Speech Contest 3rd Place ,
+2020 National Table Topics Contest 1st Place,
+2020 National Speech Contest 1st Place, 
   ]
 ---
 

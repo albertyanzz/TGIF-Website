@@ -21,7 +21,7 @@ export const SpotlightIcon: React.FC<IProps> = ({
     <div className={styles.container} onClick={onClick}>
       <div className={styles.profile_pic} style={pic} />
       <div className={styles.profile_name}>{name.split(" ")[0]}</div>
-      <div className={styles.profile_title}>{position}</div>
+      {/* <div className={styles.profile_title}>{position}</div> */}
     </div>
   );
 };

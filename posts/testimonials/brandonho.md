@@ -1,6 +1,6 @@
 ---
 name: Brandon Ho
-title: Junior High School Teacher
+title: Education Industry
 image: 3.Brandon.PNG
 ---
 

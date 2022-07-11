@@ -16,7 +16,7 @@
   align-items: flex-start;
   justify-content: center;
   /* border: 5px solid black; */
-  background-color: beige;
+  background-color: white;
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   /* border: 5px solid black; */
-  background-color: beige;
+  background-color: white;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -88,7 +88,6 @@
   align-items: center;
   overflow-x: auto;
   white-space: nowrap;
-  background-color: black;
 }
 
 .side_video {
@@ -155,4 +154,10 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.description {
+  width: 80%;
+  text-align: center;
+  margin-bottom: 30px;
 }

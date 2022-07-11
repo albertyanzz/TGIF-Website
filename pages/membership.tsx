@@ -11,7 +11,7 @@ const Membership: NextPage = ({}) => {
       {/* <div className={styles.title}>New Member Form</div> */}
       <div>
         <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSe7NlCC9Ru3ld7DBgE-0mbScIOawz9NAFX6mJ8HIyBZu1aZVQ/viewform?embedded=true"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfdF_c9T_R-hfT-vXf9m-kJslOC6txW5-rv3qH23bUHU8s2zQ/viewform?embedded=true"
           width={isMobile ? "320" : "640"}
           height="979"
           frameBorder="0"

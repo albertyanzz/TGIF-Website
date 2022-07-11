@@ -1,6 +1,6 @@
 ---
 name: Alex Shih
-title: Representative of a small and medium-sized enterprise
+title: Import-export Industry
 image: 5.Alex.PNG
 ---
 

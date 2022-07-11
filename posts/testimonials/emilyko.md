@@ -1,6 +1,6 @@
 ---
 name: Emily Ko
-title: Accountant
+title: Banking industry
 image: 2.Emily.PNG
 ---
 
