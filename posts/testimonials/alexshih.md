@@ -1,6 +1,6 @@
 ---
 name: Alex Shih
-title: Import-export Industry
+title: Food and Beverage Industry
 image: 5.Alex.PNG
 ---
 

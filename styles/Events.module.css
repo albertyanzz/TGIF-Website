@@ -17,11 +17,14 @@
 
 .events {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .mobile_events {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .mobile_event_card {
@@ -32,4 +35,6 @@
 .event_card {
   margin-left: 30px;
   margin-right: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

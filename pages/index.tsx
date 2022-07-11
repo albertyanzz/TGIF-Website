@@ -113,9 +113,24 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
         <div className={styles.info_middle}>
           Meeting time: Every 1st and 3rd Friday of the month
           <br />
-          Location: (Remote due to Covid)
           <br />
-          Zoom link: https://us02web.zoom.us/j/8675406
+          Location: SW6 找場地, 602教室
+          <br />
+          台北市大安區信義路四段279號6樓
+          <br />
+          Venue: SW6 Meeting Place, Room 602
+          <br />
+          6F, No.279, Xinyi Road, Sec. 4, Taipei, Taiwan
+          <br />
+          <br />
+          {/* Zoom link:{" "}
+          <a
+            href="https://us02web.zoom.us/j/8675406"
+            target="_blank"
+            rel="noreferrer"
+          >
+            https://us02web.zoom.us/j/8675406
+          </a> */}
         </div>
         <div className={isMobile ? styles.mobile_info : styles.info_links}>
           <div className={isMobile ? styles.mobile_button : styles.link_button}>

@@ -116,14 +116,34 @@
 
 .photos {
   padding-bottom: 30px;
-  width: 100%;
+  width: 1000px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex-basis: 33.333333%;
 }
 
 .photo {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 250px;
+  cursor: pointer;
+  border: 5px solid white;
+}
+
+.mobile_photos {
+  padding-bottom: 30px;
+  width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 33.333333%;
+}
+
+.mobile_photo {
   background-size: cover;
   background-position: center;
   height: 300px;

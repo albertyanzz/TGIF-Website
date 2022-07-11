@@ -1,5 +1,6 @@
 import { GoogleAuth } from "google-auth-library";
 import { google } from "googleapis";
+import { sendEmail } from "../../lib/google";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -28,6 +29,7 @@ export default async function handler(req, res) {
           values: [[email]],
         },
       });
+      sendEmail(email, false);
       res.status(200).json({ message: "success" });
       return result;
     } catch (err) {

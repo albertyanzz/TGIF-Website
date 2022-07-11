@@ -17,7 +17,7 @@
 
 .tm_section {
   width: 90%;
-  height: 500px;
+  height: 800px;
   display: flex;
   flex-direction: row;
   margin-bottom: 10vh;
@@ -29,7 +29,7 @@
 
 .tgif_section {
   width: 90%;
-  height: 500px;
+  height: 800px;
   display: flex;
   flex-direction: row;
   margin-bottom: 10vh;
@@ -53,7 +53,7 @@
 
 .bot_section {
   width: 90%;
-  height: 1000px;
+  height: 1200px;
   display: flex;
   flex-direction: column;
   background-color: #f77e21;
@@ -76,7 +76,7 @@
   width: 61.8%;
   background-image: url("../public/images/info_tgif.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: -250px;
 }
 
 .why_img {
