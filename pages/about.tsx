@@ -11,7 +11,11 @@ const About: NextPage = ({}) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>About TGIF Toastmasters</div>
-      <div id="toastmasters" className={styles.tm_section}>
+      <div
+        id="toastmasters"
+        className={styles.tm_section}
+        style={{ height: isMobile ? "auto" : "800px" }}
+      >
         {!isMobile && <div className={styles.tm_img} />}
         <div
           className={
@@ -52,7 +56,11 @@ const About: NextPage = ({}) => {
           </div>
         </div>
       </div>
-      <div id="tgif" className={styles.tgif_section}>
+      <div
+        id="tgif"
+        className={styles.tgif_section}
+        style={{ height: isMobile ? "auto" : "800px" }}
+      >
         <div
           className={
             isMobile ? styles.mobile_text_container : styles.text_container
@@ -80,6 +88,7 @@ const About: NextPage = ({}) => {
       <div
         id="join"
         className={isMobile ? styles.mobile_bot_section : styles.bot_section}
+        style={{ height: isMobile ? "auto" : "1200px" }}
       >
         {!isMobile && <div className={styles.why_img} />}
         <div
