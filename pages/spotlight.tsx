@@ -43,6 +43,7 @@ const Spotlight: NextPage<Params> = ({ spotlightData }) => {
               key={spotlight.name}
               onClick={() => {
                 setSpotlightMember(spotlight);
+                window.scrollTo(0, 0);
               }}
             />
           ))}

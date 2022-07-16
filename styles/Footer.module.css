@@ -16,6 +16,7 @@
 
 .input {
   width: 400px;
+  max-width: 80vw;
   height: 35px;
   border-radius: 0px;
   border: 0;
