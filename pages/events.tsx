@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { GetStaticProps } from "next";
+import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { Params } from "next/dist/server/router";
 import { EventCard } from "../components/EventCard";
@@ -23,6 +23,9 @@ const Calendar: NextPage<Params> = ({ events }) => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Upcoming TGIF Events</title>
+      </Head>
       <div className={styles.title}>Upcoming Events</div>
       <div className={isMobile ? styles.mobile_events : styles.events}>
         {events.length === 0 ? (

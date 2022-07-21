@@ -8,6 +8,7 @@ import { SpotlightCard } from "../components/SpotlightCard";
 import { SpotlightIcon } from "../components/SpotlightIcon";
 import { useState } from "react";
 import DOMPurify from "isomorphic-dompurify";
+import Head from "next/head";
 
 export const getStaticProps: GetStaticProps = async () => {
   const spotlightDataPromise = await getPostsDataByFolder("spotlights");
@@ -26,7 +27,9 @@ const Spotlight: NextPage<Params> = ({ spotlightData }) => {
 
   return (
     <div className={styles.container}>
-      {/* <div className={styles.title}>Member Spotlight</div> */}
+      <Head>
+        <title>TGIF Member Spotlights</title>
+      </Head>
       <SpotlightCard {...spotlightMember}>
         <div
           dangerouslySetInnerHTML={{

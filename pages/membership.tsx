@@ -2,13 +2,16 @@ import type { NextPage } from "next";
 import styles from "../styles/Membership.module.css";
 import { useMediaQuery } from "@mui/material";
 import { theme } from "../constants/theme";
+import Head from "next/head";
 
 const Membership: NextPage = ({}) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <div className={styles.container}>
-      {/* <div className={styles.title}>New Member Form</div> */}
+      <Head>
+        <title>Join TGIF</title>
+      </Head>
       <div>
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSfdF_c9T_R-hfT-vXf9m-kJslOC6txW5-rv3qH23bUHU8s2zQ/viewform?embedded=true"
