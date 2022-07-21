@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
-import { GetServerSideProps, GetStaticProps } from "next";
+import Head from "next/head";
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -53,6 +54,9 @@ const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>TGIF Meeting Highlights</title>
+      </Head>
       <div className={styles.title}>Featured Photos</div>
       <div className={styles.description}>
         TGIF community is built on love, fun, and excellence, inspiring members

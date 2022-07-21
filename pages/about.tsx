@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import styles from "../styles/About.module.css";
@@ -10,6 +11,9 @@ const About: NextPage = ({}) => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>About | TGIF Toastmasters</title>
+      </Head>
       <div className={styles.title}>About TGIF Toastmasters</div>
       <div
         id="toastmasters"
