@@ -37,7 +37,7 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
           <br />
           TGIF!
         </div>
-        <div className={styles.sub_text}>
+        <div className={isMobile ? styles.mobile_sub_text : styles.sub_text}>
           <div>Here we...</div>
           <div className={styles.changing_text_wrapper}>
             <span className={styles.changing_text}>grow with our stories</span>
