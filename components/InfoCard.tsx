@@ -1,5 +1,6 @@
 import styles from "../styles/InfoCard.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import { ReactNode, useState } from "react";
 
 interface IProps {
@@ -19,9 +20,9 @@ export const InfoCard: React.FC<IProps> = ({
   link,
   learnMore,
 }) => {
-  const pic = {
-    backgroundImage: `url(/images/${image})`,
-  };
+  // const pic = {
+  //   backgroundImage: `url(/images/${image})`,
+  // };
 
   const cardColor = {
     backgroundColor: color,
@@ -49,7 +50,14 @@ export const InfoCard: React.FC<IProps> = ({
               <div className={styles.card_text}>{label}</div>
             </div>
           </div>
-          <div className={styles.card_pic} style={pic}>
+          <div className={styles.card_pic}>
+            <Image
+              src={`/images/${image}`}
+              alt={image}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
             {/* {learnMore && (
               <div className={styles.link_text}>
                 <div>Learn More</div>

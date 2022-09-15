@@ -70,12 +70,20 @@ const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
             <div
               key={photo.id}
               className={isMobile ? styles.mobile_photo : styles.photo}
-              style={{ backgroundImage: `url('images/featured/${photo.id}')` }}
               onClick={() => {
                 setFeatPhoto(photo.id);
                 setPhotoIsOpen(true);
               }}
-            ></div>
+            >
+              <Image
+                className={styles.image}
+                src={`/images/featured/${photo.id}`}
+                alt={`Highlight ${photo.id}`}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
           );
         })}
       </div>
@@ -119,13 +127,18 @@ const Media: NextPage<Params> = ({ photoFiles, ytLinks }) => {
                 <div
                   key={video}
                   className={styles.side_video}
-                  style={{
-                    backgroundImage: `url(http://img.youtube.com/vi/${video}/0.jpg)`,
-                  }}
                   onClick={() => {
                     setFeatVid(video);
                   }}
-                />
+                >
+                  <Image
+                    className={styles.thumbnail}
+                    src={`http://img.youtube.com/vi/${video}/0.jpg`}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </div>
               );
             })}
           </div>
