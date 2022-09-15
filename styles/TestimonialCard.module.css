@@ -30,9 +30,12 @@
 }
 
 .profile_pic {
-  background-size: cover;
   height: 60px;
   width: 60px;
+  position: relative;
+}
+
+.profile_image {
   border-radius: 50%;
 }
 

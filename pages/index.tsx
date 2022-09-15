@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Params } from "next/dist/server/router";
 import { getPostsDataByFolder } from "../lib/posts";
 import { ITestimonial } from "../lib/types";
@@ -31,7 +32,17 @@ const Home: NextPage<Params> = ({ testimonialData }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.home_image}>
+      <div className={styles.home}>
+        <div className={styles.h}>
+          <Image
+            className={styles.home_image}
+            src="/images/home.jpg"
+            alt="TGIF Home"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+          />
+        </div>
         <div className={styles.welcome_text}>
           Welcome To
           <br />

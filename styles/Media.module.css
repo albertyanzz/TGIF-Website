@@ -99,6 +99,7 @@
   background-repeat: no-repeat;
   margin: 10px;
   flex-shrink: 0;
+  position: relative;
 }
 
 .channel_button {
@@ -125,12 +126,11 @@
 }
 
 .photo {
-  background-size: cover;
-  background-position: center;
   height: 250px;
   width: 250px;
   cursor: pointer;
   border: 5px solid white;
+  position: relative;
 }
 
 .mobile_photos {
@@ -150,6 +150,7 @@
   width: 300px;
   cursor: pointer;
   border: 5px solid white;
+  position: relative;
 }
 
 .photo_button {

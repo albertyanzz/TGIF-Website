@@ -19,19 +19,17 @@
 .mobile_picture {
   height: 600px;
   width: 100%;
-  background-size: cover;
-  background-position: top;
-  border-radius: 100px;
-  background-repeat: no-repeat;
+  position: relative;
 }
 
 .picture {
   height: 600px;
   width: 450px;
-  background-size: cover;
-  background-position: top;
+  position: relative;
+}
+
+.image {
   border-radius: 100px;
-  background-repeat: no-repeat;
 }
 
 .mobile_content {

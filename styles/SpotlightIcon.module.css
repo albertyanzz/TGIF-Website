@@ -16,12 +16,12 @@
 .profile_pic {
   height: auto;
   width: 100%;
-  border-radius: 50%;
   padding-top: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  /* background-color: black; */
+  position: relative;
+}
+
+.image {
+  border-radius: 50%;
 }
 
 .profile_name {

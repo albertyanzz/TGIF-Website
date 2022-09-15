@@ -1,5 +1,6 @@
 import styles from "../styles/TestimonialCard.module.css";
 import { ReactNode } from "react";
+import Image from "next/image";
 
 interface IProps {
   name: string;
@@ -24,7 +25,16 @@ export const TestimonialCard: React.FC<IProps> = ({
         <div>{children}</div>
       </div>
       <div className={styles.card_profile}>
-        <div className={styles.profile_pic} style={pic} />
+        <div className={styles.profile_pic}>
+          <Image
+            className={styles.profile_image}
+            src={`/images/testimonials/${image}`}
+            alt={image}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="top left"
+          />
+        </div>
         <div className={styles.profile_title}>
           <div className={styles.title_name}>{name}</div>
           <div className={styles.title_position}>{title}</div>
